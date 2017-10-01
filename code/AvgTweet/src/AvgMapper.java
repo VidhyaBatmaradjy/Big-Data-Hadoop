@@ -16,7 +16,7 @@ public class AvgMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
           String[] fields = line.toString().split(";");
           if(fields.length == 4)
              {
-    	          data.set(fields[2].length());
+    	         data.set(fields[2].length());
                 context.write(avg, data);
              }  
     }
