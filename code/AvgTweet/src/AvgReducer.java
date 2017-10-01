@@ -17,12 +17,12 @@ public class AvgReducer extends Reducer<Text, IntWritable, Text, FloatWritable> 
 	
      public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
 
-        long sum =  0;
-        long count= 0;
+        long sum   =  0;
+        long count =  0;
        
         for (IntWritable value : values) {
 
-            sum+= value.get();
+            sum  += value.get();
             count+= 1;
         }
         
