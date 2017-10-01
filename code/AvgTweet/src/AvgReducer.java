@@ -32,6 +32,4 @@ public class AvgReducer extends Reducer<Text, IntWritable, Text, FloatWritable> 
        
     }
 
-
-
 }
