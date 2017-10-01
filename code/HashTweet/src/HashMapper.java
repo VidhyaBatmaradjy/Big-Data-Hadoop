@@ -33,8 +33,7 @@ public class HashMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 			   else
 			        {break;}	
 		    }
-    		
-    	             if(supporttweet.startsWith("team")) {   
+    		    if(supporttweet.startsWith("team")) {   
     		           String check =  supporttweet.substring(4);
 			   if(check.endsWith("go")) {
 			        words.add(check.substring(0, check.length() - 2));
