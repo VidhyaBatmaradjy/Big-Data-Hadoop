@@ -13,7 +13,7 @@ public class AvgMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     
     public void map(LongWritable key, Text line, Context context) throws IOException, InterruptedException {
      
-    	  	String[] fields = line.toString().split(";");
+    	    String[] fields = line.toString().split(";");
           if(fields.length == 4)
              {
     	
