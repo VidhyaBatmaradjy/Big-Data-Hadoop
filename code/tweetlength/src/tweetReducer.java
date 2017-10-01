@@ -4,43 +4,16 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-
-//public class IntSumReducer extends Reducer<IntWritable, IntWritable, IntWritable, IntWritable> {
-
 public class tweetReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
     private IntWritable result = new IntWritable();
-    //  private IntWritable avg = new IntWritable();
-    //private IntWritable sum1 = new IntWritable();
-    //private IntWritable tot1 = new IntWritable();
     
-
-    public void reduce(Text key, Iterable<IntWritable> values, Context context)
-  //  public void reduce(IntWritable key, Iterable<IntWritable> values, Context context)
-
-              throws IOException, InterruptedException {
-
-       int sum = 0;
-       
-	
-
-        for (IntWritable value : values) {
-
-            //complete code here
-            
-            sum+= value.get();
-            
-
-        }
-        
-    
-               result.set(sum);
-
-        context.write(key,result);
-       
-
+    public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+	    int sum = 0;
+            for (IntWritable value : values) {
+                 sum+= value.get();
+            }
+            result.set(sum);
+            context.write(key,result);
     }
-
-
-
-}
+ }
